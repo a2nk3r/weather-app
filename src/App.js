@@ -1,25 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import sunny from "./img/sunny.png";
+import rain from "./img/rain.png";
+import cloudy from "./img/cloudy.png";
+import snow from "./img/snow.png";
+import "./App.css";
+import Card from "./components/Card";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      card: {
+        day: "Mon",
+        category: cloudy, // sunny/rainy/cloudy/snowy
+        high: 78,
+        low: 67
+      }
+    };
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Card card={this.state.card} />
       </div>
     );
   }
