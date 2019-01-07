@@ -1,62 +1,91 @@
 import React, { Component } from "react";
-import sunny from "./img/sunny.png";
+import axios from "axios";
+import "./App.css";
+import Cards from "./components/Cards";
+
+import clear from "./img/clear.png";
 import rain from "./img/rain.png";
 import cloudy from "./img/cloudy.png";
 import snow from "./img/snow.png";
 import fog from "./img/fog.png";
-import "./App.css";
-import Cards from "./components/Cards";
 
+const API =
+  "https://api.openweathermap.org/data/2.5/forecast?id=1254388&cnt=5&APPID=ca09bf0cf1756c6e4519217ae427cc7a";
 class App extends Component {
   constructor(props) {
     super(props);
-    const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    const icons = [clear, rain, cloudy, snow, fog];
     this.state = {
+      // initialized with randomly generated data
       cards: [
         {
           id: 0,
-          day: days[0],
-          category: cloudy,
-          status: "cloudy",
-          low: randomNo(40, 60),
-          high: randomNo(60, 80)
+          date_txt: "01-01-2018 15:30".split(" ")[0],
+          temp_max: randomNo(60, 80),
+          temp_min: randomNo(40, 60),
+          icon: icons[Math.round(Math.random() * icons.length)],
+          description: null
         },
         {
           id: 1,
-          day: days[1],
-          category: sunny,
-          status: "sunny",
-          low: randomNo(40, 60),
-          high: randomNo(60, 80)
+          date_txt: "02-01-2018 15:30".split(" ")[0],
+          temp_max: randomNo(60, 80),
+          temp_min: randomNo(40, 60),
+          icon: icons[Math.round(Math.random() * icons.length)],
+          description: null
         },
         {
           id: 2,
-          day: days[2],
-          category: rain,
-          status: "rain",
-          low: randomNo(40, 60),
-          high: randomNo(60, 80)
+          date_txt: "03-01-2018 15:30".split(" ")[0],
+          temp_max: randomNo(60, 80),
+          temp_min: randomNo(40, 60),
+          icon: icons[Math.round(Math.random() * icons.length)],
+          description: null
         },
         {
           id: 3,
-          day: days[3],
-          category: snow,
-          status: "snow",
-          low: randomNo(40, 60),
-          high: randomNo(60, 80)
+          date_txt: "04-01-2018 15:30".split(" ")[0],
+          temp_max: randomNo(60, 80),
+          temp_min: randomNo(40, 60),
+          icon: icons[Math.round(Math.random() * icons.length)],
+          description: null
         },
         {
           id: 4,
-          day: days[4],
-          category: fog,
-          status: "fog",
-          low: randomNo(40, 60),
-          high: randomNo(60, 80)
+          date_txt: "05-01-2018 15:30".split(" ")[0],
+          temp_max: randomNo(60, 80),
+          temp_min: randomNo(40, 60),
+          icon: icons[Math.round(Math.random() * icons.length)],
+          description: null
         }
       ]
     };
   }
-
+  updateFromAPI(result) {
+    const cards = this.state.cards;
+    for (let i = 0; i < 5; i++) {
+      cards[i].date_txt = result.data.list[i].dt_txt.split(" ")[0];
+      cards[i].temp_max =
+        Math.round((result.data.list[i].main.temp_max - 273.15) * 10) / 10;
+      cards[i].temp_min =
+        Math.round((result.data.list[i].main.temp_min - 273.15) * 10) / 10;
+      cards[i].icon = result.data.list[i].weather[0].main;
+      cards[i].description = result.data.list[i].weather[0].description;
+    }
+    this.setState({ cards });
+  }
+  componentDidMount() {
+    this.setState({ isLoading: true });
+    axios
+      .get(API)
+      .then(result => this.updateFromAPI(result))
+      .catch(error =>
+        this.setState({
+          error: error,
+          isLoading: false
+        })
+      );
+  }
   render() {
     return <Cards cards={this.state.cards} />;
   }
