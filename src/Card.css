@@ -4,8 +4,8 @@
   margin-top: 75px;
 }
 
-.weather-card {
+.card {
   float: left;
-  width: 100px;
+  width: 150px;
   margin-left: 10px;
 }
