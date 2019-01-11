@@ -1,0 +1,124 @@
+{
+  "cards": [
+    {
+      "id": 0,
+      "datetime": {
+        "day": null,
+        "month": null,
+        "date": null,
+        "year": null,
+        "time": null
+      },
+      "temperatureHigh": null,
+      "temperatureLow": null,
+      "icon": null,
+      "summary": null,
+      "showSummary": false
+    },
+    {
+      "id": 1,
+      "datetime": {
+        "day": null,
+        "month": null,
+        "date": null,
+        "year": null,
+        "time": null
+      },
+      "temperatureHigh": null,
+      "temperatureLow": null,
+      "icon": null,
+      "summary": null,
+      "showSummary": false
+    },
+    {
+      "id": 2,
+      "datetime": {
+        "day": null,
+        "month": null,
+        "date": null,
+        "year": null,
+        "time": null
+      },
+      "temperatureHigh": null,
+      "temperatureLow": null,
+      "icon": null,
+      "summary": null,
+      "showSummary": false
+    },
+    {
+      "id": 3,
+      "datetime": {
+        "day": null,
+        "month": null,
+        "date": null,
+        "year": null,
+        "time": null
+      },
+      "temperatureHigh": null,
+      "temperatureLow": null,
+      "icon": null,
+      "summary": null,
+      "showSummary": false
+    },
+    {
+      "id": 4,
+      "datetime": {
+        "day": null,
+        "month": null,
+        "date": null,
+        "year": null,
+        "time": null
+      },
+      "temperatureHigh": null,
+      "temperatureLow": null,
+      "icon": null,
+      "summary": null,
+      "showSummary": false
+    },
+    {
+      "id": 5,
+      "datetime": {
+        "day": null,
+        "month": null,
+        "date": null,
+        "year": null,
+        "time": null
+      },
+      "temperatureHigh": null,
+      "temperatureLow": null,
+      "icon": null,
+      "summary": null,
+      "showSummary": false
+    },
+    {
+      "id": 6,
+      "datetime": {
+        "day": null,
+        "month": null,
+        "date": null,
+        "year": null,
+        "time": null
+      },
+      "temperatureHigh": null,
+      "temperatureLow": null,
+      "icon": null,
+      "summary": null,
+      "showSummary": false
+    },
+    {
+      "id": 7,
+      "datetime": {
+        "day": null,
+        "month": null,
+        "date": null,
+        "year": null,
+        "time": null
+      },
+      "temperatureHigh": null,
+      "temperatureLow": null,
+      "icon": null,
+      "summary": null,
+      "showSummary": false
+    }
+  ]
+}
