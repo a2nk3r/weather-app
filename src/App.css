@@ -1,11 +1,10 @@
 .cards {
   width: 100%;
   margin: 0 auto;
-  margin-top: 75px;
 }
 
 .weather-card {
   float: left;
-  width: 100px;
-  margin-left: 10px;
+  width: 140px;
+  margin: 10px;
 }
